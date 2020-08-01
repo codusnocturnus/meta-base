@@ -27,7 +27,7 @@ jobs:
         repository: openembedded/bitbake
         ref: refs/tags/1.46.1
     
-    # Runs a set of commands using the runners shell
+    # setup bitbake
     - name: setup
       run: |
         export PATH=$PWD/bitbake/bin:$PATH
@@ -35,6 +35,13 @@ jobs:
         mkdir build
         mkdir build/conf
         echo "BBLAYERS ?= '$PWD/meta-base'" > build/conf/bblayers.conf
+        ls -al
+        
+    # execute bitbake
+    - name: build
+      run: |
         cd build
+        ls -al
+        ls -al conf
         bitbake world
         
