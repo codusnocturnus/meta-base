@@ -1,5 +1,7 @@
 # meta-base
 
+![CI](https://github.com/codusnocturnus/meta-base/workflows/CI/badge.svg?branch=master)
+
 A base layer for the BitBake build tool, providing just enough structure to build recipes, if those recipes are
 self-contained, or additional scaffolding is provided by another layer.
 
