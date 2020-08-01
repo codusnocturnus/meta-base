@@ -39,6 +39,9 @@ jobs:
         mkdir build/conf
         echo "BBLAYERS ?= '$PWD/meta-base'" > build/conf/bblayers.conf
         ls -al
+        ls -al bitbake
+        ls -al meta-base
+        cat build/conf/bblayers.conf
         
     # execute bitbake
     - name: build
