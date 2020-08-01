@@ -11,8 +11,10 @@ NOTES:
   + export PATH=/path/to/bitbake/bin:$PATH
   + export PYTHONPATH=/path/to/bitbake/lib:$PYTHONPATH
 + The build directory must contain the following file:
-        \# .../conf/bblayers.conf
-        BBLAYERS ?= "/path/to/meta-base"
+```
+          # .../build/conf/bblayers.conf
+          BBLAYERS ?= "/path/to/meta-base"
+```
 + Various parts of this layer have been "borrowed" from:
   + [pturley0](https://github.com/pturley0/bitbake-hello-world)
   + [BitBake](http://git.openembedded.org/bitbake)
