@@ -33,21 +33,16 @@ jobs:
     # setup bitbake
     - name: setup
       run: |
-        export PATH=$PWD/bitbake/bin:$PATH
-        export PYTHONPATH=$PWD/bitbake/lib:$PYTHONPATH
         mkdir build
         mkdir build/conf
         echo "BBLAYERS ?= '$PWD/meta-base'" > build/conf/bblayers.conf
-        ls -al
-        ls -al bitbake
-        ls -al meta-base
         cat build/conf/bblayers.conf
         
     # execute bitbake
     - name: build
       run: |
         cd build
-        ls -al
-        ls -al conf
+        export PATH=$PWD/bitbake/bin:$PATH
+        export PYTHONPATH=$PWD/bitbake/lib:$PYTHONPATH
         bitbake world
         
