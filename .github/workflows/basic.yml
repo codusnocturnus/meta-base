@@ -21,11 +21,14 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      with:
+        path: meta-base
 
     - uses: actions/checkout@v2
       with:
         repository: openembedded/bitbake
         ref: refs/tags/1.46.1
+        path: bitbake
     
     # setup bitbake
     - name: setup
