@@ -36,15 +36,11 @@ jobs:
         mkdir build
         mkdir build/conf
         echo "BBLAYERS ?= '$PWD/meta-base'" > build/conf/bblayers.conf
-        cat build/conf/bblayers.conf
         
     # execute bitbake
     - name: build
       run: |
-        ls -al bitbake/bin
-        ls -al bitbake/lib
-        cd build
         export PATH=$PWD/bitbake/bin:$PATH
         export PYTHONPATH=$PWD/bitbake/lib:$PYTHONPATH
+        cd build
         bitbake world
-        
